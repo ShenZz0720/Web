@@ -21,7 +21,7 @@ var swiper = new Swiper(".banner_swiper", {
 });
 
 
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper(".spot-swiper", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
@@ -42,4 +42,10 @@ var swiper = new Swiper(".mySwiper", {
     delay:3000,
     disableOnInteraction: false,
   },
+  mousewheel: {
+  invert: false,    
+  eventsTarget: '.spot-swiper' 
+},
+
+
 });

@@ -87,13 +87,21 @@
   margin-left: 50px;
 }
 
+/* ------------------------------------------------------- */
+
 
 /* 版心 */
+.main-container {
+  padding-top: 80px;
+}
 /* 轮播图 */
 .banner {
   width: 100%;
   height: auto;
 }
+
+/* ------------------------------------------------------- */
+
 
 /* 主要内容 */
 .content {
@@ -167,6 +175,9 @@
   width: 100%;
 }
 
+/* ------------------------------------------------------- */
+
+
 /* 酒店推荐 */
 .hotel {
   display: flex;
@@ -231,6 +242,9 @@
   background-color: #2ecabd;
 }
 
+/* ------------------------------------------------------- */
+
+
 /* 景点 */
 .spot-container {
   height: 1000px;
@@ -254,6 +268,6 @@
 }
 
 .spot-container .swiper-wrapper img:hover {
-  transition: transform 0.5s; 
+  transition: all 0.5s; 
   transform: translateY(-10px) scale(1.02);
 }
