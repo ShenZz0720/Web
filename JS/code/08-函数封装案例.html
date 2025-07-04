@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getSum(){
+      let num1 = +prompt('请输入第一个数')
+      let num2 = +prompt('请输入第二个数')
+      document.write(num1 + num2)
+    }
+    getSum()
+
+    document.write(`<br>`)
+
+    function GetSum(start = 0,end = 0 ){
+      let sum = 0
+      for(let i = start ;i <= end;i++){
+        sum += i
+      }
+      document.write(`1到100的和为:${sum}`)      
+    }
+    GetSum(+prompt('请输入开头数字：'),+prompt('请输入结尾数：'))
+
+  </script>
+</body>
+</html>

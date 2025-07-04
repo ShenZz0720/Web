@@ -1,0 +1,77 @@
+<meta charset="UTF-8">
+<style>
+
+.container{
+    width: 40%;
+    margin: 20px auto;
+}
+.common{
+    width:230px;
+    height: 30px;
+}
+span{
+    display:inline-block;
+    width: 150px;
+
+    text-align: right;
+}
+div{
+    margin-bottom: 10px;
+}
+</style>
+
+<body>
+    <form class="container">
+    <!-- ********* Begin ********* -->
+    <div>
+        <span>用户名:</span><input type="text" class="common" >
+    </div>
+    <div>
+        <span>昵称:</span><input type="text" class="common" >
+    </div>
+    <div>
+        <span>性别:</span>
+        <input type="radio" name="sex" id="male" value="男" ><label for="male">男</label>
+        <input type="radio" name="sex" id="female" value="女"><label for="female">女</label>
+        <input type="radio" name="sex" id="other" value="保密"><label for="other">保密</label>
+    </div>
+    <div>
+        <span>教育程度:</span>
+        <select class="common">
+            <option>高中</option>
+            <option>中专</option>
+            <option>大专</option>
+            <option selected>本科</option>
+            <option>硕士</option>
+            <option>博士</option>
+            <option>其他</option>
+        </select>
+    </div>
+    <div>
+        <span>婚姻状况:</span>
+        <input type="radio" name="state" id="single" checked><label for="single">未婚</label>
+        <input type="radio" name="state" id="married"><label for="married">已婚</label>
+        <input type="radio" name="state" id="secret"><label for="secret">保密</label>
+    </div>
+    <div>
+        <span>兴趣爱好:</span>
+        <input type="checkbox" name="hobby" id="football">
+        <label for="football">踢足球</label>
+        <input type="checkbox" name="hobby" id="basketball">
+        <label for="basketball">打篮球</label>
+        <input type="checkbox" name="hobby" id="film">
+        <label for="film">看电影</label>
+    </div>
+    <div>
+        <span>描述自己的特点：</span>
+        <input type="text" class="common" maxlength="20">
+    </div>
+    <div>
+        <span></span><input type="submit" value="提交" class="common">
+    </div>
+    <!-- ********* End ********* -->
+    </form>
+</body>
+
+
+

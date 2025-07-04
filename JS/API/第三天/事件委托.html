@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>第一个孩子</li>
+    <li>第二个孩子</li>
+    <li>第三个孩子</li>
+    <li>第四个孩子</li>
+    <li>第五个孩子</li>
+    <p>1234</p>
+  </ul>
+
+  <script>
+    // 点击每个小li 当前li的文字变成红色 
+    // 按照事件委托的方式 委托给父级，事件写到父级身上
+
+    const ul = document.querySelector('ul')
+    ul.addEventListener('click',function(e){
+      if (e.target.tagName == 'LI'){
+          e.target.style.color = 'red'
+      }
+    })
+  </script>
+</body>
+</html>

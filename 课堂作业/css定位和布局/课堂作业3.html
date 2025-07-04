@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            background-size: cover;
+        }
+
+        .container {
+            justify-content: center;
+            align-items: center;
+            background-color: #dab273;
+        }
+        
+        /* 头像区域 */
+        .header {
+            align-items: center;
+            display: flex;
+            width:auto;
+            height: 350px;
+            background-color: #dab273;
+        }
+        .user img {
+            margin: auto 35px;
+            width: 180px;
+            height: 180px;
+        }
+        /* 个人简介 */
+        .introduce {
+            padding-left: 12px;
+            font-size: 20px;
+            text-align: center;
+            vertical-align: bottom;
+        }
+
+        /* 教育背景区域 */
+        .education {
+            text-align: center;
+            margin: 50px;
+            margin-left: 300px;
+        }
+        .education h2 {
+            margin-bottom: 10px;
+        }
+        .education p {
+            line-height: 1.6;
+        }
+
+        /* 滑动控制 */
+        .slider-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .slider-controls button {
+            font-size: 24px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: #555;
+        }
+        
+        /* 滑动点区域 */
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        
+        .dot.active {
+            background-color: #555;
+        }
+
+       /* 导航 */
+       .nav {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+       .nav ul {
+        display: flex;
+        justify-content: center;
+       }
+
+        .nav li {
+            list-style: none;
+            margin-right: 24px ;
+            padding: 6px 8px;
+            line-height: 27px;
+            font-size: 19px;
+            transition: background-color 0.3s;
+        }
+
+        .nav li a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .nav li a:hover{
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* 方块盒子 */
+        .box {
+            flex-wrap: wrap;
+            display: flex;
+            margin-bottom: 30px;
+            margin: auto;
+            width: 900px;
+            height: 400px;
+        }
+
+        .item {
+            margin: 20px;
+            padding: 15px;
+            width: 250px;
+            height: 150px;
+            border-radius: 5px;
+        }
+
+        .item:nth-child(1) {
+            background-color: #cc9900;
+        }
+        
+        .item:nth-child(2) {
+            background-color: #99cc00;
+        }
+        
+        .item:nth-child(3) {
+            background-color: #cc9900;
+        }
+        
+        .item:nth-child(4) {
+            background-color: #99cc00;
+        }
+        
+        .item:nth-child(5) {
+            background-color: #cc9900;
+        }
+        
+        .item:nth-child(6) {
+            background-color: #99cc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- 头像区域 -->
+        <div class="header">
+            <div class="user">
+                <img src="../css定位和布局/Avatar.png" alt="">
+
+                <!-- 个人介绍 -->
+                <div class="introduce">
+                    <div><strong>Shenzhongzheng</strong></div>
+                    <div>个人信息介绍</div>
+                    <div>12138</div>
+                    <div>123456789@outlook.com</div>
+                </div>
+            </div>
+
+                    <!-- 教育背景区域 -->
+            <div class="education">
+                <h2>教育背景</h2>
+                <p>广州应用科技学院2024-2028</p>
+                <p>专业：计算机科学与技术</p>
+                <p>主要课程：数据结构、计算机网络、操作系统、数据库原理、编程语言（如C/C++、Java、Python等）、算法设计与分析、软件工程等。</p>
+                <!-- 滑动控制区域 -->
+                <div class="slider-controls">
+                    <button class="prev">❮</button>
+                    <button class="next">❯</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 滑动点区域 -->
+        <div class="dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>  
+        
+        <!-- 导航区域 -->
+        <div class="nav">
+            <ul>
+                <li><a href="#">编程语言</a></li>
+                <li><a href="#">开发工具</a></li>
+                <li><a href="#">数据库技术</a></li>
+                <li><a href="#">操作系统</a></li>
+                <li><a href="#">项目经历</a></li>
+            </ul>
+        </div>
+
+        <!-- 方块区域 -->
+         <div class="box">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+         </div>
+    </div>
+    
+</body>
+</html>

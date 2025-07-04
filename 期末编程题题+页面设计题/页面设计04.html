@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    .container {
+      /* display: flex; */
+      width: 900px;
+      height: 700px;
+      background-color: rgb(171, 169, 169);
+      margin: auto;
+      margin-top: 50px;
+      border-radius: 10px;
+    }
+
+    .system {
+      height: 80px;
+      line-height: 80px;
+      margin-left: 50px;
+    }
+
+    form {
+      height: 400px;
+      width: 800px;
+      background-color: #e9e3e38a;
+      margin:  0 auto;
+      align-content: center;
+      border-radius: 10px;
+    }
+    
+    .new {
+      margin-left: 20px;
+      margin-bottom: 100px;
+    }
+
+    .op {
+      width: 750px;
+    }
+
+    .task {
+      width: 800px;
+      height: 300px;
+      margin:  0 auto;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    table {
+      width: 100%;
+      border: 1px solid black;
+      border-radius: 5px;
+      border-collapse: collapse;
+    }
+
+    th {
+      border-left: 1px solid black;
+    }
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="system"><h2>任务管理系统</h2></div>
+    <form action="">
+      <div class="new">
+        <h3>添加新任务</h3>
+        <div class="name">
+          <p>任务名称：</p>
+          <label for=""><input type="text" placeholder="任务1" class="op"></label>
+        </div>
+        <div class="priority">
+          <p>优先级：</p>
+          <select name="" id="" class="op">
+            <option value="">低</option>
+            <option value="">中</option>
+            <option value="">高</option>
+          </select>
+        </div>
+        <div class="data">
+          <p>截止日期：</p>
+          <input type="date" class="op">
+        </div>
+      </div> 
+    </form>
+    <div class="task">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">任务</th>
+            <th scope="col">优先级</th>
+            <th scope="col">截止日期</th>
+            <th scope="col">状态</th>
+            <th scope="col">操作</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>

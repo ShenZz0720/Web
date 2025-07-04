@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 600px;
+            margin: 50px auto;
+            display: flex;
+            font-size: 25px;
+            line-height: 40px;
+        }
+
+        .qs {
+
+            width: 450px;
+            height: 40px;
+            color: red;
+
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btns button {
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+<body>
+    <h2>随机点名</h2>
+    <div class="box">
+        <span>名字是：</span>
+        <div class="name">这里显示姓名</div>
+    </div>
+    <div class="btns">
+        <button class="start">开始</button>
+        <button class="end">结束</button>
+    </div>
+
+    <script>
+        // 存入名字
+        let arr = ['马嘉祺','丁程鑫','宋亚轩','刘耀文','张真源','严浩翔','贺峻霖','蔡徐坤','王子异','孙笑川']
+
+        let random = 0
+        let timeId = 0
+
+        const name = document.querySelector('.name')
+        // 绑定按钮
+        const start = document.querySelector('.start')
+        const end = document.querySelector('.end')
+        // 注册事件
+        start.addEventListener('click',function(){
+            timeId = setInterval(function(){
+                random = Math.floor(Math.random() * arr.length)
+                name.innerHTML = arr[random]
+            },10)
+            // console.log(random);
+            if(arr.length == 1){
+                start.disabled = true
+                end.disabled = true
+            }
+        })
+
+        end.addEventListener('click',function(){
+            clearInterval(timeId)
+            arr.splice(random,1)
+        })
+
+    </script>
+</body>
+</html>

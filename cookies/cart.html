@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>购物车 - Cookies购物车系统</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-shopping-cart"></i> 我的购物车</h1>
+      <p class="subtitle">跨页面购物车系统 - 数据通过Cookies共享</p>
+    </header>
+    
+    <div class="panel">
+      <h2 class="panel-title"><i class="fas fa-shopping-basket"></i> 购物车内容</h2>
+      
+      <div class="cart-items" id="cartContainer">
+        <!-- 购物车内容将在这里动态生成 -->
+        <div class="empty-cart">
+          <i class="fas fa-shopping-basket"></i>
+          <h3>您的购物车是空的</h3>
+          <p>请从商品列表中添加商品</p>
+          <a href="index.html" class="btn nav-btn nav-btn-primary">
+            <i class="fas fa-arrow-left"></i> 返回购物
+          </a>
+        </div>
+      </div>
+      
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>小计：</span>
+          <span id="subtotal">¥0</span>
+        </div>
+        <div class="summary-row">
+          <span>运费：</span>
+          <span>¥0</span>
+        </div>
+        <div class="summary-row summary-total">
+          <span>总计：</span>
+          <span id="total">¥0</span>
+        </div>
+        
+        <a href="checkout.html" class="btn btn-checkout">
+          <i class="fas fa-credit-card"></i> 结算购物车
+        </a>
+      </div>
+      
+      <div class="nav-buttons">
+        <a href="index.html" class="nav-btn nav-btn-secondary">
+          <i class="fas fa-arrow-left"></i> 继续购物
+        </a>
+      </div>
+    </div>
+    
+    <div class="cookie-info">
+      <h3><i class="fas fa-exchange-alt"></i> 跨页面数据流</h3>
+      <p>购物车数据通过Cookie在不同页面间共享：</p>
+      <div class="cookie-code">
+        // 在 index.html 添加商品<br>
+        addToCart("1", "智能手机", 2999);<br><br>
+        
+        // 在 cart.html 读取同一Cookie<br>
+        const cart = getCookie('shopping_cart');<br><br>
+        
+        // 在 checkout.html 也访问相同数据
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 页面加载时加载购物车
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCart();
+    });
+
+    // 获取购物车数据（从Cookie）
+    function getCart() {
+      const cartCookie = getCookie('shopping_cart');
+      return cartCookie ? JSON.parse(cartCookie) : [];
+    }
+
+    // 获取Cookie的辅助函数
+    function getCookie(name) {
+      const cookies = document.cookie.split(';');
+      for(let cookie of cookies) {
+        cookie = cookie.trim();
+        if(cookie.startsWith(name + '=')) {
+          return decodeURIComponent(cookie.substring(name.length + 1));
+        }
+      }
+      return null;
+    }
+
+    // 更新商品数量
+    function updateQuantity(productId, change) {
+      const cart = getCart();
+      const item = cart.find(item => item.id === productId);
+      
+      if(item) {
+        item.quantity += change;
+        
+        // 如果数量小于1，则从购物车中移除
+        if(item.quantity < 1) {
+          cart.splice(cart.indexOf(item), 1);
+        }
+        
+        saveCart(cart);
+        loadCart();
+      }
+    }
+
+    // 从购物车中移除商品
+    function removeFromCart(productId) {
+      const cart = getCart();
+      const newCart = cart.filter(item => item.id !== productId);
+      saveCart(newCart);
+      loadCart();
+    }
+
+    // 保存购物车数据（到Cookie）
+    function saveCart(cart) {
+      const cartJson = JSON.stringify(cart);
+      // 设置Cookie有效期为30天
+      const date = new Date();
+      date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));
+      const expires = "expires=" + date.toUTCString();
+      document.cookie = `shopping_cart=${cartJson}; ${expires}; path=/`;
+    }
+
+    // 加载购物车并渲染
+    function loadCart() {
+      const cart = getCart();
+      const cartContainer = document.getElementById('cartContainer');
+      const subtotalElement = document.getElementById('subtotal');
+      const totalElement = document.getElementById('total');
+      
+      if(cart.length === 0) {
+        cartContainer.innerHTML = `
+          <div class="empty-cart">
+            <i class="fas fa-shopping-basket"></i>
+            <h3>您的购物车是空的</h3>
+            <p>请从商品列表中添加商品</p>
+            <a href="index.html" class="btn nav-btn nav-btn-primary">
+              <i class="fas fa-arrow-left"></i> 返回购物
+            </a>
+          </div>
+        `;
+        subtotalElement.textContent = '¥0';
+        totalElement.textContent = '¥0';
+        return;
+      }
+      
+      let cartHtml = '';
+      let subtotal = 0;
+      
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        
+        cartHtml += `
+          <div class="cart-item">
+            <div class="cart-item-info">
+              <div class="cart-item-name">${item.name}</div>
+              <div class="cart-item-price">单价: ¥${item.price.toFixed(2)}</div>
+            </div>
+            <div class="cart-item-quantity">
+              <button class="quantity-btn" onclick="updateQuantity('${item.id}', -1)">-</button>
+              <span>${item.quantity}</span>
+              <button class="quantity-btn" onclick="updateQuantity('${item.id}', 1)">+</button>
+            </div>
+            <div class="cart-item-total">¥${itemTotal.toFixed(2)}</div>
+            <button class="btn-remove" onclick="removeFromCart('${item.id}')">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        `;
+      });
+      
+      cartContainer.innerHTML = cartHtml;
+      subtotalElement.textContent = `¥${subtotal.toFixed(2)}`;
+      totalElement.textContent = `¥${subtotal.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>

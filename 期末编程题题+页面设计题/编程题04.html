@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta No="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td,th {
+      border: 1px solid black;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>stuNo</th>
+      <th>course1</th>
+      <th>course2</th>
+      <th>course3</th>
+      <th>total</th>
+    </tr>
+
+    <script>
+      let students = [
+        {No:'1',course1:77,course2:66,course3:88,total:''},
+        {No:'2',course1:78,course2:89,course3:79,total:''},
+        {No:'3',course1:92,course2:84,course3:78,total:''},
+        {No:'4',course1:78,course2:99,course3:83,total:''},
+        {No:'5',course1:85,course2:97,course3:69,total:''}
+      ]
+      // 遍历数组
+      for (let i = 0;i < students.length;i++)
+    {
+      // 计算总成绩
+      students[i].total = students[i].course1 + students[i].course2 + students[i].course3
+      // console.log(students[i].total);
+    }
+
+    // 排序数组
+    students.sort((a,b) => b.total - a.total)
+
+    // 循环渲染
+    for (let i = 0;i <students.length;i++){
+      document.write(`
+        <tr>
+            <td>${students[i].No}</td>
+            <td>${students[i].course1}</td>
+            <td>${students[i].course2}</td>
+            <td>${students[i].course3}</td>
+            <td>${students[i].total}</td>
+        </tr>   
+      `)
+    }
+    </script>   
+  </table>
+
+</body>
+</html>

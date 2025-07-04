@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟双色球案例</title>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>  
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/doubleChromosphere.js"></script>
+    <link rel="stylesheet" href="css/inserthtml.com.radios.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<style>
+  
+</style>
+<body>
+ 
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" style="width:50%">
+		<div class="modal-content" style="width:100%">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					双色球号码
+				</h4>
+			</div>
+			<div class="modal-body" style="width:100%;">
+				<div class="innerModalBody">
+               <h2 class="pickingTitleH2">红色球<span>选取6个号码</span></h2>
+               <div class="center" >
+					<input type="checkbox" id="checkbox-3-1" name="redBall" value="01"/><label for="checkbox-3-1">01</label>
+					<input type="checkbox" id="checkbox-3-2" name="redBall" value="02"/><label for="checkbox-3-2">02</label>
+					<input type="checkbox" id="checkbox-3-3" name="redBall" value="03"/><label for="checkbox-3-3">03</label>
+                    <input type="checkbox" id="checkbox-3-4" name="redBall" value="04"/><label for="checkbox-3-4">04</label>
+                    <input type="checkbox" id="checkbox-3-5" name="redBall" value="05"/><label for="checkbox-3-5">05</label>
+                    <input type="checkbox" id="checkbox-3-6" name="redBall" value="06"/><label for="checkbox-3-6">06</label>
+                    <input type="checkbox" id="checkbox-3-7" name="redBall" value="07"/><label for="checkbox-3-7">07</label>
+                    <input type="checkbox" id="checkbox-3-8" name="redBall" value="08"/><label for="checkbox-3-8">08</label>
+                    <input type="checkbox" id="checkbox-3-9" name="redBall" value="09"/><label for="checkbox-3-9">09</label>
+                    <input type="checkbox" id="checkbox-3-10" name="redBall" value="10"/><label for="checkbox-3-10">10</label>
+				</div>
+    		    <div class="center" style="margin-top:10px">
+					<input type="checkbox" id="checkbox-3-11" name="redBall" value="11"/><label for="checkbox-3-11">11</label>
+					<input type="checkbox" id="checkbox-3-12" name="redBall" value="12"/><label for="checkbox-3-12">12</label>
+					<input type="checkbox" id="checkbox-3-13" name="redBall" value="13"/><label for="checkbox-3-13">13</label>
+                    <input type="checkbox" id="checkbox-3-14" name="redBall" value="14"/><label for="checkbox-3-14">14</label>
+                    <input type="checkbox" id="checkbox-3-15" name="redBall" value="15"/><label for="checkbox-3-15">15</label>
+                    <input type="checkbox" id="checkbox-3-16" name="redBall" value="16"/><label for="checkbox-3-16">16</label>
+                    <input type="checkbox" id="checkbox-3-17" name="redBall" value="17"/><label for="checkbox-3-17">17</label>
+                    <input type="checkbox" id="checkbox-3-18" name="redBall" value="18"/><label for="checkbox-3-18">18</label>
+                    <input type="checkbox" id="checkbox-3-19" name="redBall" value="19"/><label for="checkbox-3-19">19</label>
+                    <input type="checkbox" id="checkbox-3-20" name="redBall" value="20"/><label for="checkbox-3-20">20</label>
+				</div>
+         		<div class="center" style="margin-top:10px">
+					<input type="checkbox" id="checkbox-3-21" name="redBall" value="21"/><label for="checkbox-3-21">21</label>
+					<input type="checkbox" id="checkbox-3-22" name="redBall" value="22"/><label for="checkbox-3-22">22</label>
+					<input type="checkbox" id="checkbox-3-23" name="redBall" value="23"/><label for="checkbox-3-23">23</label>
+                    <input type="checkbox" id="checkbox-3-24" name="redBall" value="24"/><label for="checkbox-3-24">24</label>
+                    <input type="checkbox" id="checkbox-3-25" name="redBall" value="25"/><label for="checkbox-3-25">25</label>
+                    <input type="checkbox" id="checkbox-3-26" name="redBall" value="26"/><label for="checkbox-3-26">26</label>
+                    <input type="checkbox" id="checkbox-3-27" name="redBall" value="27"/><label for="checkbox-3-27">27</label>
+                    <input type="checkbox" id="checkbox-3-28" name="redBall" value="28"/><label for="checkbox-3-28">28</label>
+                    <input type="checkbox" id="checkbox-3-29" name="redBall" value="29"/><label for="checkbox-3-29">29</label>
+                    <input type="checkbox" id="checkbox-3-30" name="redBall" value="30"/><label for="checkbox-3-30">30</label>
+				</div>
+                <div class="center" style="margin-top:10px">
+					<input type="checkbox" id="checkbox-3-31" name="redBall" value="31"/><label for="checkbox-3-31">31</label>
+					<input type="checkbox" id="checkbox-3-32" name="redBall" value="32"/><label for="checkbox-3-32">32</label>
+					<input type="checkbox" id="checkbox-3-33" name="redBall" value="33"/><label for="checkbox-3-33">33</label>
+				</div>
+              <!-- 蓝色球 -->
+               <h2  class="pickingTitleH2">蓝色球<span>选取1个号码</span></h2>
+                <div class="center" >
+					<input type="checkbox" id="checkbox1-3-1" name="blueBall" value="01"/><label for="checkbox1-3-1">01</label>
+					<input type="checkbox" id="checkbox1-3-2" name="blueBall" value="02"/><label for="checkbox1-3-2">02</label>
+					<input type="checkbox" id="checkbox1-3-3" name="blueBall" value="03"/><label for="checkbox1-3-3">03</label>
+                    <input type="checkbox" id="checkbox1-3-4" name="blueBall" value="04"/><label for="checkbox1-3-4">04</label>
+                    <input type="checkbox" id="checkbox1-3-5" name="blueBall" value="05"/><label for="checkbox1-3-5">05</label>
+                    <input type="checkbox" id="checkbox1-3-6" name="blueBall" value="06"/><label for="checkbox1-3-6">06</label>
+                    <input type="checkbox" id="checkbox1-3-7" name="blueBall" value="07"/><label for="checkbox1-3-7">07</label>
+                    <input type="checkbox" id="checkbox1-3-8" name="blueBall" value="08"/><label for="checkbox1-3-8">08</label>
+                    <input type="checkbox" id="checkbox1-3-9" name="blueBall" value="09"/><label for="checkbox1-3-9">09</label>
+                    <input type="checkbox" id="checkbox1-3-10" name="blueBall" value="10"/><label for="checkbox1-3-10">10</label>
+				</div>
+                <div class="center" style="margin-top:10px">
+					<input type="checkbox" id="checkbox1-3-11" name="blueBall" value="11"/><label for="checkbox1-3-11">11</label>
+					<input type="checkbox" id="checkbox1-3-12" name="blueBall" value="12"/><label for="checkbox1-3-12">12</label>
+					<input type="checkbox" id="checkbox1-3-13" name="blueBall" value="13"/><label for="checkbox1-3-13">13</label>
+                    <input type="checkbox" id="checkbox1-3-14" name="blueBall" value="14"/><label for="checkbox1-3-14">14</label>
+                    <input type="checkbox" id="checkbox1-3-15" name="blueBall" value="15"/><label for="checkbox1-3-15">15</label>
+                    <input type="checkbox" id="checkbox1-3-16" name="blueBall" value="16"/><label for="checkbox1-3-16">16</label>
+				</div>   
+			</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default"  id="btn2" >确定
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+<!-- 顶部图片 -->    
+<div class="content headerImgArea">
+    <img src="img/header.png"  width="100%"/>  
+</div>
+    
+<div class="content mb20"> 
+  <div class="btn-pickingDiv">  
+    <button class="btn-picking btn-lg" data-toggle="modal" data-target="#myModal">
+	  选择双色球号码
+    </button>
+  </div>    
+  <!-- 选择双色球展示区域 -->
+  <div class="pickingContent">
+    <ul class="pickingBall">
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+    </ul>
+   </div>    
+   
+   <div class="rules">
+    <h4 class="rulesTitle">选码规则:</h4>
+    <ol>
+      <li>红色球选取6个号码</li>
+      <li>蓝色球选取1个号码</li> 
+    </ol>
+   </div>
+   <!-- 开奖展示区域 --> 
+   <button class="btn-lg btn-lottery" id="btn1">开 奖</button>  
+   <div class="ballContent">
+     <ul class="ball">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+     </ul>
+   </div>    
+   <!-- 中奖规则 -->
+   <div class="rules">
+    <h3 class="lotterTitle">第<span id="lotteryNum">0</span>次开奖<span id="message"></span></h3>   
+    <h4 class="rulesTitle">中奖规则:</h4>
+    <ol>
+      <li>一等奖：选6+1中6+1</li>
+      <li>二等奖：选6+0中6+0</li> 
+      <li>三等奖：选5+1中5+1</li>  
+      <li>四等奖：选5+0中5+0或4+1中4+1</li> 
+      <li>五等奖：选4+0中4+0或中3+1</li>
+      <li>六等奖：选2+1中2+1或1+1中1+1或0+1中0+1</li>     
+    </ol>
+    </div>
+</div>
+<!--中奖信息模态框-->
+<div class="modal fade" id="lotteryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog text-center lotteryArea">
+		<div class="modal-content lottery-modal-content">
+			<div class="modal-header" style="border-bottom:0">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#fff;font-size:24px">
+					&times;
+				</button>
+			</div>
+			<div class="modal-body" id="lotteryImg" style="width:100%;">			 
+			</div>
+		</div>
+	</div>
+ </div>
+
+<script>
+    let redSelectArr = [];
+    let blueSelectArr = [];
+    let inputRedBall = $("input[name='redBall']");
+    //限制最多选择六个红色球
+    let maxRedNums=6;
+    for(let i in inputRedBall){
+      inputRedBall[i].onclick = function (){
+            let _inputRedBall = $("input[name='redBall']");
+            let cNums = 0;
+            for(let i in _inputRedBall){
+                  if(_inputRedBall[i].checked){
+                   cNums ++;
+                  }
+                 }
+            if(cNums > maxRedNums){
+                this.checked = false;
+                alert('最多只能选择6红球');
+              }
+           }
+    } 
+
+    let inputBlueBall = $("input[name='blueBall']");
+    //限制最多选择一个蓝色球
+    let maxBlueNums=1;
+    for(let i in inputBlueBall){
+      inputBlueBall[i].onclick = function (){
+            let _inputBlueBall = $("input[name='blueBall']");
+            let cNums = 0;
+            for(let i in _inputBlueBall){
+                  if(_inputBlueBall[i].checked){
+                   cNums ++;
+                  }
+                 }
+            if(cNums > maxBlueNums){
+                this.checked = false;
+                alert('最多只能选择1蓝球');
+              }
+           }
+    } 
+
+ 
+        // 确定按钮点击事件
+        $('#btn2').click(function() {
+        
+        let _redSelectArr=$("input[name='redBall']:checked");
+        let blueSelect = $("input[name='blueBall']:checked");
+         //注意在每次数据刷新之前，清空一下上次点击留下来的数据
+        redSelectArr=[];
+        blueSelectArr=[];
+        for(let i = 0; i < blueSelect.length; i++) {
+            blueSelectArr.push(blueSelect[i].value);
+        }
+       //判断如果小于6个红球或不等于1个蓝球           
+       if(_redSelectArr.length<6||(blueSelect.length != 1)){ 
+            alert('请按规则选取,红色球选择6个,蓝色球选择1个。');
+          }else{
+            for(let i in _redSelectArr){
+               if(i<_redSelectArr.length)
+                redSelectArr[i]=_redSelectArr[i].value;  
+               }
+               //加入蓝球
+               redSelectArr[6]= blueSelect[0].value;
+               //隐藏模态框 
+              $('#myModal').modal('hide');      
+              for (let i in redSelectArr){ 
+                  //初始化清除文本
+                  $(".pickingBall li:eq("+i+")").text('');                  
+                  $(".pickingBall li:eq("+i+")").append("<div class='pickingDiv'>"+redSelectArr[i]+"</div>");
+                   }   
+               }
+    });
+
+
+
+    // 定义全局变量
+    let redArr = [];
+    let lotteryNum = 0;
+  // 开奖按钮点击事件
+$('#btn1').click(function() {
+    // 清空之前的开奖结果
+    $(".ball li").empty();
+
+        if(redSelectArr.length < 7) {
+        alert('请先选择号码');
+        return;
+        }
+
+    let blue = 0;
+    let flag = 0;
+       let wNumArr=[];
+    //随机生成蓝色球号码
+               blue= Math.round(Math.random() * 15)+1;
+               //注意在每次数据刷新之前，清空一下上次点击留下来的数据
+               let redArr=[];
+           for( let i=0;i<6;i++){
+               //随机生成1-33号码
+               let num=Math.round(Math.random() * 32)+1;
+               //判断地址不存在推入
+               if(redArr.indexOf(num)==-1){ 
+                   redArr.push(num);
+                }else{
+                    //存在了使i-1增加一次循环次数
+                    i--; 
+                    }
+              } 
+           //中奖号码数组                
+           
+           for( let j=0;j<6;j++){
+               wNumArr[j]=redArr[j];
+               //排序
+               wNumArr.sort((a,b) => a-b)
+              }
+           //加入蓝球    
+           wNumArr[6]=blue;
+
+            console.log(wNumArr);
+           //调用方法
+           sum();
+           function sum(){   
+             if(flag<7){                      
+                 //前台显示中奖号码   
+                 $(".ball li:eq("+flag+")").append("<div class='ballDiv'><div class='innerBallDiv'>"+wNumArr[flag]+"</div></div>"); 
+                 flag++;            
+             }
+               //递归每隔1000毫秒调用       
+               setTimeout(sum,100);                                         
+           }  
+           //调用判断中奖方法，延时7000毫秒执行
+
+           setTimeout(function() { viewWinning(redSelectArr,blueSelectArr,redArr,blue); }, 701);
+           
+            
+           //累加中奖次数
+           lotteryNum++;
+           //输出中奖次数    
+           $("#lotteryNum").text(lotteryNum);   
+      })
+
+
+
+function setLotteryImgBackground(imgePath, prizeLevel) {
+    // 清空之前的内容
+    $("#lotteryImg").empty();
+    // 创建img标签并设置src
+    let img = $("<img>").attr("src", imgePath);
+    // 将img添加到模态框中
+    $("#lotteryImg").append(img);
+    // 显示模态框
+    $("#lotteryModal").modal('show');
+
+    // 设置中奖信息
+    let prizeText = "";
+        switch (prizeLevel) {
+            case 1:
+                prizeText = "恭喜您中了一等奖！";
+                break;
+            case 2:
+                prizeText = "恭喜您中了二等奖！";
+                break;
+            case 3:
+                prizeText = "恭喜您中了三等奖！";
+                break;
+            case 4:
+                prizeText = "恭喜您中了四等奖！";
+                break;
+            case 5:
+                prizeText = "恭喜您中了五等奖！";
+                break;
+            case 6:
+                prizeText = "恭喜您中了六等奖！";
+                break;
+            default:
+                prizeText = "很遗憾，您没有中奖";
+        }
+        $("#message").text(prizeText);
+    }
+
+
+
+
+    // 判断中奖方法
+    function viewWinning(redSelectArr, blueSelectArr, redArr, blue) {
+        // 只取前6个红球进行匹配
+        let redBalls = redSelectArr.slice(0, 6);
+        
+        // 对比两个红色球数组
+        let ar = redBalls.filter(function(n) {
+            return redArr.indexOf(parseInt(n)) != -1;
+        });
+        let redMatchNum = ar.length; // 红球匹配数量
+        
+       
+
+        // 修复蓝球匹配逻辑：使用用户选择的蓝球与开奖蓝球比较 // 蓝球是否匹配
+        let blueMatch = parseInt(blueSelectArr[0]) === blue;
+        console.log(blue);
+        console.log(blueMatch);
+        console.log(blueSelectArr[0]);
+
+        // 根据中奖规则判断中奖情况
+        if (redMatchNum == 6 && blueMatch) {
+            setLotteryImgBackground('img/1lottery.png', 1); // 一等奖图片
+        } else if (redMatchNum == 6) {
+            setLotteryImgBackground('img/2lottery.png', 2); // 二等奖图片
+        } else if (redMatchNum == 5 && blueMatch) {
+            setLotteryImgBackground('img/3lottery.png', 3); // 三等奖图片
+        } else if (redMatchNum == 5 || (redMatchNum == 4 && blueMatch)) {
+            setLotteryImgBackground('img/4lottery.png', 4); // 四等奖图片
+        } else if (redMatchNum == 4 || (redMatchNum == 3 && blueMatch)) {
+            setLotteryImgBackground('img/5lottery.png', 5); // 五等奖图片
+        } else if (blueMatch) { // 六等奖只需要蓝球匹配
+            setLotteryImgBackground('img/6lottery.png', 6); // 六等奖图片
+        } else {
+            setLotteryImgBackground('img/losingLottery.png', 0); // 未中奖图片
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span {
+      display: inline-flex;
+      padding: 5px 10px;
+      border: 1px solid pink ;
+      margin: 2px;
+      border-radius:  5px;
+      box-shadow: 2px 2px 2px rgb(167, 96, 108);
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function sheet99(){
+      for (let i = 0; i <=  9; i++) {
+        for (let j = 1 ;j <= i;j++){
+          document.write(`<span>${j} X ${i} = ${i * j}</span>`)
+        }
+        document.write(`<br>`)
+      }
+    }
+    sheet99()
+  </script>
+</body>
+</html> 

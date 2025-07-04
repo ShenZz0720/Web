@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .first {
+      width: 300px;
+      height: 398px;
+      background-color: black;
+    }
+    
+    .box {
+      width: 200px;
+      height: 200px;
+      color: #333;
+    }
+
+    .active {
+      width: 300px;
+      height: 398px;
+      color: red;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="first">文字</div>
+  <div class="second">文字</div>
+
+  <script>
+
+    // 为了解决className容易覆盖以前的类名，通过classList方式追加和删除类名 
+
+    // 通过classList添加
+    // 1. 获取元素
+    const box1 = document.querySelector('.first')
+    const box2 = document.querySelector('.second')
+
+    // 2. 修改样式
+    // 2.1 追加类 add() 类名不加点，并且是字符串
+    box1.classList.add('active')
+    // 2.2 删除类  remove() 类名不加点，并且是字符串
+    box1.classList.remove('first')
+    // 2.3 切换类  toggle()  有还是没有啊， 有就删掉，没有就加上
+    box2.classList.toggle('first')
+  </script>
+</body>
+
+</html>

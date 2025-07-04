@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>  
+    function fun1(age){
+      if (0 < age && age <= 12) {
+        alert('儿童')
+      }
+      else if (12 < age && age <= 19){
+        alert('青少年')
+      }
+      else if (19 < age && age <= 59){
+        alert('成年人')
+      }
+      else if (age > 59 ){
+        alert('老年人')
+      }
+      else{
+        alert('无效年龄')
+      }
+    }
+    fun1(prompt('请输入年龄'))
+  </script>
+</body>
+</html>

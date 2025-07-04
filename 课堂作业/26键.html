@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      background-color: #ada4a4ae;
+      width: 1000px;
+      height: 320px;
+      margin: auto;
+      justify-items: center;
+      align-items: center;
+      padding: auto;
+      border-radius: 10px;
+    }
+
+    .key {
+      border-radius: 10px;
+      background-color: #fff;
+      line-height: 50px;
+      border: 1px solid black;
+      height: 50px;
+      width: 50px;
+      margin: 5px;
+    }
+
+    .number {
+      display: flex;
+      text-align: center;
+      align-items: center;
+    }
+
+    .number #Del {
+      width: 110px;
+    }
+
+    .tab {
+      display: flex;
+      border-radius: 10px;
+      text-align: center;
+      align-items: center;
+    }
+
+    .tab #tab {
+      width: 85px;
+    }
+
+    .tab #wide {
+      border-radius: 10px;
+      width: 75px;
+    }
+
+    .caps {
+      display: flex;
+      text-align: center;
+      align-items: center;
+    }
+
+    .caps #caps {
+      width: 110px;
+    }
+
+    .caps #ENTER {
+      width: 110px;
+    }
+
+    .Shift {
+      display: flex;
+      text-align: center;
+      align-items: center;
+    }
+
+    .shift {
+      border-radius: 10px;
+      background-color: #fff;
+      line-height: 50px;
+      border: 1px solid black;
+      height: 50px;
+      width: 140px;
+      margin: 5px;
+    }
+
+      .CTRL {
+        border-radius: 10px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+    }
+
+      .ctrl {
+        border-radius: 10px;
+        background-color: #fff;  
+        line-height: 50px;
+        border: 1px solid black;
+        height: 50px;
+        width: 75px;
+        margin: 5px;
+    }
+      
+      .win {
+        border-radius: 10px;
+        background-color: #fff;
+        line-height: 50px;
+        border: 1px solid black;
+        height: 50px;
+        width: 75px;
+        margin: 5px;
+    }
+
+      .alt {
+        border-radius: 10px;
+        background-color: #fff;
+        line-height: 50px;
+        border: 1px solid black;
+        height: 50px;
+        width: 75px;
+        margin: 5px;
+    }
+
+    .spa {
+      border-radius: 10px;
+      background-color: #fff;
+      line-height: 50px;
+      border: 1px solid black;
+      height: 50px;
+      width: 300px;
+      margin: 5px;
+    }
+
+    .Fn {
+      border-radius: 10px;
+      background-color: #fff;
+      line-height: 50px;
+      border: 1px solid black;
+      height: 50px;
+      width: 75px;
+      margin: 5px;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="number">
+      <div class="key">~</div>
+      <div class="key">1</div>
+      <div class="key">2</div>
+      <div class="key">3</div>
+      <div class="key">4</div>
+      <div class="key">5</div>
+      <div class="key">6</div>
+      <div class="key">7</div>
+      <div class="key">8</div>
+      <div class="key">9</div>
+      <div class="key">0</div>
+      <div class="key">-</div>
+      <div class="key">+</div>
+      <div class="key" id="Del">Delete</div>
+    </div>
+    <div class="tab">
+      <div class="key" id="tab">Tab</div>
+      <div class="key">Q</div>
+      <div class="key">W</div>
+      <div class="key">E</div>
+      <div class="key">R</div>
+      <div class="key">T</div>
+      <div class="key">Y</div>
+      <div class="key">U</div>
+      <div class="key">I</div>
+      <div class="key">O</div>
+      <div class="key">P</div>
+      <div class="key">[</div>
+      <div class="key">]</div>
+      <div class="key" id="wide">\</div>
+    </div>
+    <div class="caps">
+      <div class="key" id="caps">CAPS</div>
+      <div class="key">A</div>
+      <div class="key">S</div>
+      <div class="key">D</div>
+      <div class="key">F</div>
+      <div class="key">G</div>
+      <div class="key">H</div>
+      <div class="key">J</div>
+      <div class="key">K</div>
+      <div class="key">L</div>
+      <div class="key">;</div>
+      <div class="key">'</div>
+      <div class="key" id="ENTER">ENTER</div>
+    </div>
+    <div class="Shift">
+      <div class="shift">SHIFT</div>
+      <div class="key">Z</div>
+      <div class="key">X</div>
+      <div class="key">C</div>
+      <div class="key">V</div>
+      <div class="key">B</div>
+      <div class="key">N</div>
+      <div class="key">M</div>
+      <div class="key">,</div>
+      <div class="key">.</div>
+      <div class="key">/</div>
+      <div class="shift">SHIFT</div>
+    </div>
+    <div class="CTRL">
+      <div class="ctrl">CTRL</div>
+      <div class="win">WIN</div>
+      <div class="alt">ALT</div>
+      <div class="spa">SPACE</div>
+      <div class="alt">ALT</div>
+      <div class="win">WIN</div>
+      <div class="Fn">FN</div>
+      <div class="ctrl">CTRL</div>
+    </div>
+  </div>
+</body>
+</html>

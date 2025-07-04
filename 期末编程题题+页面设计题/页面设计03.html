@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      background-color: #e7e2e286;
+      height: 600px;
+      width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3,320px);
+      grid-template-rows: repeat(1,400px);
+      grid-gap: 10px;
+      justify-content: center;
+      align-content: center;
+      border-radius: 10px;
+    }
+    
+    h2 {
+      float: top;
+    }
+
+    .item {
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+
+    .item h5 {
+      color: rgb(152, 148, 148);
+    }
+
+    .item .a {
+      margin-left: 15px;
+    }
+
+    button {
+      height: 30px;
+      background-color: rgb(79, 192, 77);
+      border: 1px solid black;
+      border-radius: 5px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: rgb(19, 238, 15);
+    }
+
+    img {
+      width: 319px;
+      float: top;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- <h2>产品列表</h2> -->
+    <div class="item">
+      <img src="./images/5eb2a3525a2834b52057cadb5792c775.jpg" alt="">
+      <div class="a">
+        <h3>产品1</h3>
+        <h5>￥99.0</h5>
+        <button>加入购物车</button>
+      </div>
+    </div>
+    <div class="item">
+      <img src="./images/5eb2a3525a2834b52057cadb5792c775.jpg" alt="">
+      <div class="a">
+        <h3>产品1</h3>
+        <h5>￥99.0</h5>
+        <button>加入购物车</button>
+      </div>
+    </div>
+        <div class="item">
+      <img src="./images/5eb2a3525a2834b52057cadb5792c775.jpg" alt="">
+      <div class="a">
+        <h3>产品1</h3>
+        <h5>￥99.0</h5>
+        <button>加入购物车</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

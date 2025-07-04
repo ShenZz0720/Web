@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 150px;
+      margin: 0 auto;
+      background-color: pink;
+      align-content: center;
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button>123</button>
+  <div class="box">
+    我是广告
+    <button class="close">关闭</button>
+  </div>
+  <script>
+
+
+
+    const btn = document.querySelector('button')
+    btn.addEventListener('click',function(){
+      alert('你好')
+    })
+
+    const close = document.querySelector('.close')
+    const box = document.querySelector('.box')
+
+    close.addEventListener('click',function(){
+      box.style.display = 'none'
+    })
+
+
+  </script>
+</body>
+</html>

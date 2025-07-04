@@ -1,0 +1,40 @@
+blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul {
+    margin: 0;
+    padding: 0
+}
+
+body,button,input,select,textarea {
+    font: 12px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,BlinkMacSystemFont,Helvetica Neue,Arial,PingFang SC,PingFang TC,PingFang HK,Microsoft Yahei,Microsoft JhengHei
+}
+
+ol,ul {
+    list-style: none
+}
+
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a:hover {
+    color: #2ecabd;
+    text-decoration: none!important
+}
+
+a:focus {
+    outline: none
+}
+
+button,input,select,textarea {
+    font-size: 100%
+}
+
+button {
+    border-radius: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}

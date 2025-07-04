@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+    display: flex;
+    align-items: center;
+    }
+
+    .res {
+      width: 120px;
+      height: 20px;
+      border: 1px solid black;
+      border-radius: 5px;
+      margin: 5px;
+     }
+
+     input {
+      margin: 5px;
+     }
+  </style>
+
+
+</head>
+<body>
+  <div class="container">
+    <input type="text" value="" placeholder="请输入数字：" class="first">
+    <select name="" id="math">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input type="text" value="" placeholder="请输入数字：" class="second"> 
+    <div>=</div>
+    <div class="res"></div>
+    <button>计算</button>
+  </div>
+  
+  <script>
+    // 获取元素
+    const btn = document.querySelector('button')
+    const res = document.querySelector('.res')
+    const first = document.querySelector('.first')
+    const second = document.querySelector('.second')
+    // 注册事件
+    btn.addEventListener('click',function(){
+      // 获取选择的加减乘除
+      const op = document.querySelector('option:checked').value
+      // 将获取的值转换为数字
+      const num1 = parseFloat(first.value)
+      const num2 = parseFloat(second.value)
+
+      // 调用函数
+      const result = calculate(num1,num2,op)
+      // 输出结果
+      res.innerHTML = `${result}`
+    })
+
+    // 计算函数
+    function calculate ( num1,num2,operator){
+      let result = 0
+      // 判断计算
+      switch(operator){
+        // 加法
+        case '+':
+          result = num1 + num2
+          break
+        // 减法
+        case '-':
+          result = num1 - num2
+          break
+        // 乘法
+        case '*':
+          result = num1 * num2
+          break
+        // 除法
+        case '/':
+          // 判断除数
+          if (num2 == 0) {
+            return alert("除数不能为零")
+          }else {
+            result = num1 / num2
+          }
+          break
+        
+        default:
+          result = "无效字符"
+      }
+      return result
+    }
+    
+  </script>
+</body>
+</html>

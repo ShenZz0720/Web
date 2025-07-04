@@ -1,0 +1,276 @@
+ *{
+     margin: 0;
+     padding: 0
+ }
+body,h1,h2,h3,h4,h5,h6,p,ol,ul,li{
+    margin:0;
+    padding:0
+}
+body {
+	padding: 0;
+	margin: 0;
+	font-size: 62.5%;
+	font-family: Arial, sans-serif;
+    background-color:#d73e52;
+    background-image: linear-gradient(#2f0335, #d73e52);
+    background-repeat: no-repeat;
+}
+
+label {
+	display: inline;
+}
+
+.holder {
+	width: 100%;
+	background: #f9f9f9;
+	margin: 0px auto;
+	padding: 60px 0;
+	font-size: 1em;
+}
+
+.center {
+	margin: 0px auto;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+.top-content {
+	padding: 40px 0;
+}
+
+.mb20{
+ margin-bottom: 20px;
+}
+p {
+	font-size: 2em;
+	font-family: 'adelle-sans', sans-serif;
+	text-align: center;
+	color: #bbb;
+}
+.content{
+    margin:0px auto;
+    background:#d52a2f;
+    text-align:center;
+    width:50%;
+    overflow:hidden;
+    padding: 15px 0;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: inset 0px 0px 60px 1px rgba(0, 0, 0, 0.3);
+       }
+.headerImgArea{
+    background:transparent;
+    padding:0;
+    border-radius:0
+}
+/*
+  
+  模态框选择双色球号码
+ 
+*/
+.innerModalBody{
+    margin:0 20px;
+}
+.innerModalBody .center{
+    margin: 0 10px
+}
+.pickingTitleH2{
+    margin:20px 10px; 
+    font-size: 20px
+}
+.pickingTitleH2 span{
+    font-size: 16px;
+    margin-left:15px; 
+}
+
+/*
+
+  开奖区域Style 
+
+*/
+.ballContent{
+    width:600px;
+    background:#fcc954;
+    padding:10px;
+    margin:10px auto;
+    overflow:hidden;
+    text-align:center;
+    border-radius: 6px;
+}
+.ball{
+    list-style:none;
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.ball li{
+    float: left;
+    margin: 5px 15px;
+    background:#fff;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    /* padding: 15px;  */
+    background-image: linear-gradient(#cccccc,#ffffff,#cccccc);/*渐变*/
+}
+/*
+开奖球style
+*/
+.ballDiv{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: red;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+}
+.innerBallDiv{
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 46px;
+    margin:2px;
+    background-image: linear-gradient(#ffffff,transparent);
+}
+/*开奖-蓝球样式*/
+
+.ball li:last-child .ballDiv{
+    background:#2167e7
+}
+
+/*开几次奖标题*/
+
+.lotterTitle{
+    font-size:14px;
+    font-family: '微软雅黑';
+    margin:20px auto;
+    color:#ffa657
+}
+.lotterTitle span{
+    margin: 0 8px;
+}
+#message{
+    color:#fec24f
+}
+
+/*开奖按钮style*/
+
+.btn-lottery{
+    width:180px;
+    height:60px;
+    margin: 0 auto 10px;
+    background-image: linear-gradient(#ffffff,#fccb5b,#eea826);
+    border: 0;
+    box-shadow: 6px 6px 0px 0px #ab8317;
+    font-size: 28px;
+    color:#a94d0d;
+    font-weight: bolder;
+    transform:skewX(5deg);/*倾斜*/
+    font-family: '楷体','黑体',Regular;
+        }
+
+/*开奖按钮滑入效果*/
+
+.btn-lottery:hover{
+    color:red;
+}
+
+/*
+
+  选择号码展示区域Style 
+
+*/
+
+.pickingContent{
+    width:800px;
+    background:#c21a1f;
+    padding:5px 10px;
+    margin:10px auto;
+    overflow:hidden;
+    text-align:center;
+    border-radius: 6px;
+}
+.pickingBall{
+    list-style:none;
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.pickingBall li{
+    float: left;
+    margin: 5px 15px;
+    height: 60px;
+    width: 80px;
+    text-align: center;
+    padding:5px 15px;
+}
+.pickingBall li:last-child .pickingDiv{
+    border: 2px solid #cdb7ff;
+    color:#cdb7ff; 
+}
+
+/*选取球展示style*/
+
+.pickingDiv{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid #ffdbab; 
+    color: #ffdbab;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+}   
+
+/*选择号码按钮Style*/
+
+.btn-pickingDiv{
+    width:800px;
+    margin: 0 auto;
+    text-align: left;
+}
+.btn-picking{
+    width:160px;
+    height:50px;
+    margin:0 0 5px;
+    border:1px solid #ffdbab;
+    color:#ffdbab;
+    border-radius: 6px;
+    background:transparent;
+}    
+
+/*获奖规则style*/
+
+.rules{
+    width:800px;
+    margin:10px auto;
+    text-align:left;
+    color:#ffdbab;
+    font-size: 14px;
+}
+.rules ol{
+    list-style: none
+}
+.rulesTitle{
+    margin: 10px 0;
+}
+
+/*中奖信息模态框*/
+
+.lotteryArea{
+    width:700px;
+    background:transparent;
+    border:0;
+    box-shadow: 0 0px 0px #ccc;
+}
+.lottery-modal-content{
+    width:100%;
+    background:transparent;
+    box-shadow: 0 0px 0px #ccc;
+    border:0;
+}

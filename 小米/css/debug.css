@@ -1,0 +1,264 @@
+
+.home-page {
+  margin: 0,auto;
+  width: 100%;
+  max-width: 2650px;
+  overflow-x: hidden;
+}
+
+#header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 65px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 15px;
+  overflow: hidden;
+  background-color: #000000;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.header-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  max-width: 1440px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  color: white;
+}
+
+/* logo */
+.logo {
+  display: flex;
+  float: left;
+  width: 60px;
+  height: auto;
+}
+
+.logo img {
+  height: 34px;
+  width: 34px;
+}
+
+/* 小米官网 */
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 888.76px;
+}
+
+.nav-menu-item {
+  display: flex;
+  height: 65px;
+  align-items: center;
+  margin: 0 20px;
+  font-weight: 500;
+}
+
+.header-wrapper .header-container .nav-menu .nav-menu-item a {
+  height: 65px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.nav-menu-item:nth-child(1){
+  margin-left: 0;
+}
+
+.nav-menu-item:nth-child(10){
+  margin-right: 0;
+}
+
+
+/* 登录 */
+.login-info {
+  display: flex;
+  margin-left: 13px;
+  height: 65px;
+  width: 110px;
+  align-items: center;
+}
+
+.login-info .uname-right {
+  margin:0 25px;
+  font-size: 14px;
+}
+
+.nav-active {
+  color: #ff6900;
+}
+
+/* 版心 */
+.swiper-div {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-div img{
+  height: auto;
+  width: 100%;
+}
+
+/* 页脚 */
+.container {
+  display: flex;
+  margin:0 338.5px;
+  padding: 40px 0;
+  padding-left: 60px;
+}
+
+.footer-links {
+  display: flex;
+  
+}
+
+.footer .site-footer .container .footer-links dl dt {
+  display: block;
+  width: 160px;
+  font-size: 14px;
+  line-height: 1.25;
+  margin: -1px 0 26px;
+  color: #424242;
+}
+
+.footer .site-footer .container .footer-links dl dd {
+  font-size: 12px;
+  margin: 10px 0 0;
+  color: #757575;
+
+}
+
+
+/* 人工客服 */
+.col-contact {
+  width: 251px;
+  text-align: center;
+}
+
+.contact {
+  align-items: center;
+  border-left: 1px solid #e0e0e0;
+}
+
+.col-contact p {
+  margin: 0 0 5px;
+  font-size: 12px;
+}
+
+.col-contact a {
+  display: inline-block;
+  width: 188px;
+  height: 28px;
+  font-size: 12px;
+  line-height: 28px;
+  cursor: pointer;
+}
+
+.col-contact .phone {
+  line-height: 1;
+  color: #ff6900;
+  font-size: 22px;
+}
+
+/* 最后页脚 */
+.site-info {
+  padding: 30px 0;
+  background: #fafafa;
+  font-size: 12px;
+}
+
+.site-info .footer-container {
+  width: 1226px;
+  margin: 0 auto;
+}
+
+.site-info .footer-container .ir {
+  height: 56px;
+  width: 56px;
+  font-size: 0;
+  background-image: url(../image/milogo.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  float: left;
+  margin-right: 20px;
+}
+
+.site-info .footer-container .info-text {
+  padding-left: 77px;
+}
+
+.site-info .footer-container .info-text .sites a{
+  color: #757575;
+}
+
+.site-info .footer-container .info-text p {
+  font-size: 12px;
+  color: #b0b0b0;;
+}
+
+a:hover{
+  color: #ff6900;
+}
+
+.site-info .footer-container .info-text .sites a:hover {
+  color: #ff6900;
+}
+
+/* 按钮 */
+
+.button-prev {
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  left: .3300082502rem;
+  border-top: 5px solid black;
+  border-left: 5px solid black;
+  transform: rotate(-45deg);
+  align-items: center;
+  float: left;
+}
+
+.button-prev::before {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  content: "";
+}
+
+.button-next {
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  right: .3300082502rem;
+  border-top: 5px solid black;
+  border-left: 5px solid black;
+  transform: rotate(135deg);
+  align-items: center;
+  position: absolute;
+  margin: auto 0;
+  float: left;
+}
+
+.button-next::before {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  content: "";
+}
+
+.car {
+  display: inline-block;
+}
+

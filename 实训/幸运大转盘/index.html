@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幸运转转转</title>
+    <style>
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        
+        h1 {
+            color: #e74c3c;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        
+        .game-container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .turntable-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        
+        .turntable-bg {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-image: url('turntable.png');
+            background-size: cover;
+            border-radius: 10%;
+        }
+        
+        .pointer {
+            position: absolute;
+            width: 40px;
+            height: 160px;
+            left: 49%;
+            top: 83%;
+            z-index: 10;
+            cursor: pointer;
+            transform-origin: center 22px;
+            background-image: url('pointer.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-left: -17px;
+            margin-top: -150px;
+        }
+        
+        .top {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: url('top.png') center no-repeat;
+            background-size: contain;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9;
+        }
+        
+        .start-btn {
+            margin-top: 25px;
+            padding: 12px 35px;
+            font-size: 18px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+        }
+        
+        .start-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4);
+        }
+        
+        .start-btn:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #e74c3c;
+            min-height: 30px;
+        }
+        
+        .countdown {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #7f8c8d;
+        }
+        
+        .light {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #ff0000;
+            z-index: 2;
+        }
+        
+        .light:nth-child(odd) {
+            animation: lightFlash 0.8s infinite;
+        }
+        
+        .light:nth-child(even) {
+            animation: lightFlash2 0.8s infinite;
+        }
+        
+        @keyframes lightFlash {
+            0% { background: #ff0000; box-shadow: 0 0 5px #ff0000; }
+            50% { background: #ffff00; box-shadow: 0 0 15px #ffff00; }
+            100% { background: #ff0000; box-shadow: 0 0 5px #ff0000; }
+        }
+        
+        @keyframes lightFlash2 {
+            0% { background: #ffff00; box-shadow: 0 0 15px #ffff00; }
+            50% { background: #ff0000; box-shadow: 0 0 5px #ff0000; }
+            100% { background: #ffff00; box-shadow: 0 0 15px #ffff00; }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>幸运转转转</h1>
+        <div class="turntable-container">
+            <div class="turntable-bg"></div>
+            <div id="lights-container"></div>
+            <div class="pointer" id="pointer"></div>
+            <div class="top"></div>
+        </div>
+        <button class="start-btn" id="start-btn">开始旋转</button>
+        <div class="result" id="result">点击开始按钮旋转转盘</div>
+        <div class="countdown" id="countdown"></div>
+    </div>
+
+    <audio id="spin-sound"></audio>
+    <audio id="win-sound"></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const startBtn = document.getElementById('start-btn');
+            const pointer = document.getElementById('pointer');
+            const result = document.getElementById('result');
+            const countdown = document.getElementById('countdown');
+            const spinSound = document.getElementById('spin-sound');
+            const winSound = document.getElementById('win-sound');
+            
+            // 创建灯光元素
+            function createLights() {
+                const container = document.querySelector('.turntable-container');
+                const lightsContainer = document.getElementById('lights-container');
+                const centerX = container.offsetWidth / 2;
+                const centerY = container.offsetHeight / 2;
+                const radius = 180;
+                const lightCount = 24;
+                
+                for (let i = 0; i < lightCount; i++) {
+                    const angle = (i * (360 / lightCount)) * Math.PI / 180;
+                    const x = Math.sin(angle) * radius + centerX - 10;
+                    const y = Math.cos(angle) * radius + centerY - 10;
+                    
+                    const light = document.createElement('div');
+                    light.className = 'light';
+                    light.style.left = `${x}px`;
+                    light.style.top = `${y}px`;
+                    lightsContainer.appendChild(light);
+                }
+            }
+            
+            // 禁用按钮
+            function disableButton() {
+                startBtn.disabled = true;
+                startBtn.classList.add('disabled');
+            }
+            
+            // 启用按钮
+            function enableButton() {
+                startBtn.disabled = false;
+                startBtn.classList.remove('disabled');
+            }
+            
+            // 播放音效
+            function playSound(audioElement, soundUrl) {
+                if (!audioElement.src) {
+                    audioElement.src = soundUrl;
+                }
+                audioElement.currentTime = 0;
+                audioElement.play().catch(() => {
+                    console.warn('Audio play failed');
+                });
+            }
+            
+            // 旋转转盘
+            function spin() {
+                disableButton();
+                result.textContent = '旋转中...';
+                
+                playSound(spinSound, 'https://www.soundjay.com/mechanical/sounds/spinner-1.mp3');
+                
+                const randomAngle = Math.floor(Math.random() * 360) + 1;
+                const circles = Math.floor(Math.random() * 6) + 5;
+                const totalRotation = circles * 360 + randomAngle;
+                
+                pointer.style.transition = 'none';
+                pointer.style.transform = 'rotate(0deg)';
+                
+                setTimeout(() => {
+                    pointer.style.transition = 'transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99)';
+                    
+                    setTimeout(() => {
+                        pointer.style.transform = `rotate(${totalRotation}deg)`;
+                    }, 10);
+                    
+                    countdown.textContent = `倒计时: 4秒`;
+                    
+                    let timeLeft = 4;
+                    const timer = setInterval(() => {
+                        timeLeft--;
+                        countdown.textContent = `倒计时: ${timeLeft}秒`;
+                        if (timeLeft <= 0) {
+                            clearInterval(timer);
+                            countdown.textContent = '';
+                        }
+                    }, 1000);
+                    
+                    setTimeout(() => {
+                        showResult((totalRotation % 360));
+                        spinSound.pause();
+                        
+                        setTimeout(() => {
+                            resetPointer();
+                        }, 5000);
+                    }, 4200);
+                }, 10);
+            }
+            
+            // 显示结果
+            function showResult(finalDegree) {
+                const adjustedDegree = (finalDegree + 22.5) % 360;
+                let resultText = '';
+                
+                if (adjustedDegree >= 17 && adjustedDegree < 45) {
+                    resultText = "三等奖";
+                } else if (adjustedDegree >= 45 && adjustedDegree < 100) {
+                    resultText = "再来一次";
+                } else if (adjustedDegree >= 101 && adjustedDegree < 160) {
+                    resultText = "四等奖";
+                } else if (adjustedDegree >= 170 && adjustedDegree < 199) {
+                    resultText = "再来一次";
+                } else if (adjustedDegree >= 200 && adjustedDegree < 225) {
+                    resultText = "一等奖";
+                } else if (adjustedDegree >= 225 && adjustedDegree < 270) {
+                    resultText = "再来一次";
+                } else if (adjustedDegree >= 280 && adjustedDegree < 330) {
+                    resultText = "二等奖";
+                } else {
+                    resultText = "再来一次";
+                }
+                
+                result.textContent = `恭喜获得: ${resultText}`;
+                
+                if (resultText !== "再来一次") {
+                    playSound(winSound, 'https://www.soundjay.com/human/sounds/applause-8.mp3');
+                }
+            }
+            
+            // 重置指针
+            function resetPointer() {
+                pointer.style.transition = 'none';
+                pointer.style.transform = 'rotate(0deg)';
+                
+                setTimeout(() => {
+                    pointer.style.transition = 'transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99)';
+                    enableButton();
+                }, 10);
+            }
+            
+            // 初始化
+            createLights();
+            startBtn.addEventListener('click', spin);
+        });
+    </script>
+</body>
+</html>

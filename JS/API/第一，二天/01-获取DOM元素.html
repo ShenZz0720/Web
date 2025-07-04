@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">123</div>
+  <div class="box">abc</div>
+  <div id="nav">导航栏</div>
+  <ul class="nav">
+    <li>测试1</li>
+    <li>测试2</li>
+    <li>测试3</li>
+    <li>测试4</li>
+    <li>测试5</li>
+    <li>测试6</li>
+    <li>测试7</li>
+  </ul>
+
+  <script>
+    // querySelector只选择第一个
+    const box = document.querySelector('div')
+    const box2 = document.querySelector('.box')
+    const nav = document.querySelector('#nav')
+    const li = document.querySelector('ul li:first-child')
+    // 返回匹配的第一个元素，一个HTMLElement对象
+    // 如果没有匹配到，返回NUll
+
+    // 选择所有的li
+    const lis = document.querySelectorAll('.nav li')
+    // querySelectorAll选择器返回css选择器匹配的nodelist对象集合
+    // 得到的是一个伪数组，有长度有索引号，但是美哦有pop(),push()等数组方法
+    // 想要得到里面每一个对象，需要遍历for的方法
+
+    console.log(box)
+    console.log(box2)
+    console.log(nav)
+    console.log(li)
+    console.log(lis)
+
+    // 获取一个DOM元素可以直接修改样式，多个不行，因为多个获取到的是一个数组
+    nav.style.color = 'red'
+    Web
+    // 遍历获取元素
+    const arr = document.querySelectorAll('.nav li') 
+    for(let i = 0 ;i < arr.length;i++){
+      console.log(arr[i]);
+    }
+
+
+
+  </script>
+</body>
+</html>

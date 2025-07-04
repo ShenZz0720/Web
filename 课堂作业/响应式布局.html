@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flex-container {
+            max-width: 1300px;
+            padding: 20px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    /*main中包含3个article，各占1行*/
+    /*main宽度占3,side1宽度占1，side2宽度占1*/
+    /*main、side1、side2用order 进行重新排序*/
+        main {
+            border:1px solid;
+             flex:3;
+             order: 2;  /*3列，排在中间*/
+        }
+
+        .side1 {
+            border: 1px solid;
+            flex: 1;
+            order: 1;
+        }
+
+        .side2 {
+            border: 1px solid;
+            flex: 1;
+            order: 3;
+        }
+
+        article {
+            box-sizing: border-box;
+            flex-basis: 30%;
+            padding: 20px;
+            background-color: #eee;
+            border: 2px solid #fff;
+        }
+
+        .new-content {
+        width: 100%; /* 占满整行 */
+        border: 1px solid #ccc;
+        padding: 20px;
+        order: 4; 
+        }
+
+                /* 小屏幕 */
+        @media (max-width: 600px) { 
+            .side1,
+            .side2 {
+                display: none;
+            }
+             main {
+                flex: 1 0 100%; /* 强制占满整行 */
+                order: 1;       /* 控制显示顺序为第一 */
+            }
+            .new-content {
+                order: 2 ; /* 保持在最下方 */
+            }
+        }
+
+        /* 中屏幕*/
+        @media (min-width: 600px) and (max-width: 960px) {
+             .side2 {
+                display: none;
+            }
+        }
+
+        /* 大屏幕 */
+        @media (min-width: 960px) {
+            main {
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <main>
+            <article>
+                <h2>HTML</h2>
+                <p>超文本标记语言,用于构建网页结构,定义网页包括的内容。</p>
+            </article>
+            <article>
+                <h2>CSS</h2>
+                <p>层叠样式表，用于构建网页布局、外观、美化页面。</p>
+            </article>
+            <article>
+                <h2>JavaScript</h2>
+                <p>JavaScript，脚本语言，用于构建网页行为，与用户进行交互，使用户获得更好的体验 。</p>
+            </article>
+        </main>
+        <aside class="side1">
+            <h2>相关内容</h2>
+            <p>前端框架，前端常见问题</p>
+        </aside>
+        <aside class="side2">
+            <h2>后端开发</h2>
+            <p>后端是为了处理数据</p>
+        </aside>
+        <div class="new-content">
+            <h2>szz</h2>
+            <p>szz</p>
+        </div>
+    </div>
+</body>
+</html>

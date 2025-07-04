@@ -1,0 +1,259 @@
+.home-page {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 2650px;
+}
+
+.header-container {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  display: flex;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  padding: 0 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  font-size: 18px;
+  color: black;
+  align-items: center;
+  max-width: 1440px;
+}
+
+/* logo */
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+}
+
+
+/* 导航 */
+.nav-menu {
+  display: flex;
+  width: 888px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu-item {
+  display: flex;
+  align-items: center;
+  margin: 0 50px;
+}
+
+/* search */
+.search-item {
+  display: flex;
+  align-items: center;
+}
+
+.search-item input {
+  height: 40px;
+  border: 1px solid #2ecabd;
+  outline: none;
+  padding: 0 10px;
+  border-radius: 50px 0 0 50px;
+}
+
+.search-item .search-button {
+  height: 40px;
+  width: 55px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 50px 50px 0;
+  background-color: #2ecabd;
+  background-image: url(../images/search.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* 个人中心 */
+.login-item {
+  width: 100px;
+  margin-left: 50px;
+}
+
+
+/* 版心 */
+/* 轮播图 */
+.banner {
+  width: 100%;
+  height: auto;
+}
+
+/* 主要内容 */
+.content {
+  height: 2000px;
+  width: 100%;
+  background-color: #fff;
+}
+
+
+.content .content-container::before {
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* 标题 */
+.title {
+  display: flex;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+}
+
+.title h2 { 
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.underline {
+  width: 80%;
+  height: 3px;
+  background-color: #2ecabd;
+  border-radius: 10%;
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+}
+
+/* 瀑布流 */
+.content .content-container {
+  height: 1000px;
+  background-image: 
+    linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0) 20%),
+    linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0) 20%),
+    url(../images/gustavo-zambelli-LJh9ayGO8t8-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.content .content-container .waterfall-flow {
+  margin: 0 auto;
+  height: 900px;
+  width: 70%;
+  columns: 4;
+  column-gap: 15px;
+}
+
+.waterfall-flow-item {
+  break-inside: avoid;
+  margin-bottom: 30px;
+}
+
+.waterfall-flow-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  transition: all 0.4s;
+}
+
+.waterfall-flow-item img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* 酒店推荐 */
+.hotel {
+  display: flex;
+  width: 80%;
+  height: 1100px;
+  margin: 0 auto;
+  margin-top: 50px;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  background-color: #bcb2b223;
+  box-shadow: 5px 5px #bcb2b223 ;
+}
+
+/* 标题 */
+.hotel .title {
+  width: 100%;
+}
+
+/* 酒店 */
+.hotel .hotel-item {
+  width: 300px;
+  height: 450px;
+  margin: 10px 30px;
+  border-radius: 10px;
+}
+
+.hotel .hotel-item h3 {
+  margin: 5px 0;
+  padding-left: 10px;
+}
+
+.hotel .hotel-item img {
+  cursor: pointer;
+  width: 300px;
+  height: 75%;
+  border-radius: 10px;
+}
+
+.hotel .hotel-item:hover {
+  transition: transform 0.5s; 
+  transform: translateY(-10px) scale(1.02);
+  border: 1px solid seagreen;
+}
+
+/* 了解更多 */
+.hotel .hotel-item .more {
+  display: block;
+  bottom:0;
+  margin: 0 auto;
+  background-color: #7dd8d1;
+  width: 100%;
+  height: 70px;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 70px;
+  color: #fff;
+}
+
+.hotel .hotel-item .more:hover {
+  background-color: #2ecabd;
+}
+
+/* 景点 */
+.spot-container {
+  height: 1000px;
+  width: 100%;
+  max-width: 2650px;
+  background-image: 
+    linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0) 30%),
+    linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0) 30%),
+    url(../images/jamie-street-gZlQZFCA1Vc-unsplash.jpg);
+    background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.spot-container .swiper {
+  top: 25%;
+}
+
+.spot-container .swiper-wrapper img {
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.spot-container .swiper-wrapper img:hover {
+  transition: transform 0.5s; 
+  transform: translateY(-10px) scale(1.02);
+}
