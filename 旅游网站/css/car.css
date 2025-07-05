@@ -3,9 +3,9 @@
 .good-container {
   display: flex;
   width: 1440px;
-  height: calc(100%);
+  height: 888px;
   margin: 0 auto;
-  padding: 80px;
+  padding: 50px;
   /* padding-top: calc(10%); */
   border-top: 1px solid gray;
   border-bottom: 1px solid gray ;
@@ -15,45 +15,171 @@
 /* content-left */
 .content-left {
   width: 750px;
-  display: flex;
+  /* display: flex; */
 }
 
-.content-left .swiper {
-  box-sizing: border-box;
+.car-list-manage {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 100px;
-  height: 600px;
+  height: 60px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.check-box {
+  display: flex;
+  align-items: center;
+}
+
+.check-box span {
+  font-weight: 500;
+  margin-left:  10px; ;
+}
+
+/* 全选 */
+input {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  appearance:none;
+  width: 25px;
+  height: 25px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  margin: auto 0;
+}
+
+input[type="checkbox"]:checked {
+  appearance:none;
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-radius: 50%;
+  background-color: #2ecabd;
+  background-image: url(../images/勾.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* 删除 */
+.car-list-manage .delete-manage .delete {
+  border: none;
   background-color: #fff;
-  margin-right: 60px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  border-radius: 50%;
 }
 
-.tab-item {
+.car-list-manage .delete-manage .delete:hover {
+  background-color: rgb(235, 230, 230);
+}
+
+.car-list-manage .delete-manage img {
+  height: 25px;
+  width: 25px;
+}
+
+
+/* 购物车内容 */
+.car-items .items li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(236, 236, 236);
+  align-items: center;
+}
+
+.item-container .select {
+  margin: auto 0;
+}
+
+.item-container .select .ck {
+  margin-right: 20px;
+}
+
+
+.item-container {
+  position: relative;
+  display: flex;
+}
+
+.quantity_container {
+  margin-left: 30px;
+}
+
+.quantity_container .name {
+  margin: 15px 0;
+}
+
+.car-items .items img {
   width: 100px;
   height: 100px;
-  padding: 3px;
-  background-color: #ffffff;
+}
+
+
+/* 数量按钮样式 */
+.car-items .items .quantity {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+}
+
+.car-items .items .quantity input {
+  width: 40px;
+  text-align: center;
+}
+
+.car-items .items .quantity div {
+  width: 30px;
+  height: 30px;
+  border-collapse: collapse;
+  text-align: center;
+  line-height: 30px;
+}
+
+.car-items .items .quantity .number {
+  border: none;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.car-items .items .quantity .operate {
   border: 1px solid black;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.active {
-  border: 1px solid black;
+.car-items .items .quantity .operate:hover {
+  background-color: rgb(236, 236, 236);
 }
 
-.content-left .swiper .tab-item:hover {
-  border: 1px solid black;
+.car-items .items .quantity .decrease {
+  border-right: none;
+  border-radius: 40% 0 0 40%;
 }
 
-.content-left .picture {
-  width: 600px;
-  height: 600px;
+.car-items .items .quantity .increase {
+  border-left: none;
+  border-radius: 0 40% 40% 0;
 }
 
-.content-left img {
-  width: 100%;
-  height: 100%;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -66,6 +192,8 @@
   height: 500px;
   background-color: #fff;
   padding-top: 50px;
+  padding-left: 50px;
+  border-left:1px solid rgb(189, 185, 185) ;
 }
 
 .content-right-container {
@@ -74,12 +202,44 @@
   width: 100%;
   height: 330px;
   word-wrap: break-word;
-  overflow-wrap: break-word
+  overflow-wrap: break-word;
 }
 
 /* 描述 */
 .description {
   margin: 10px 5px;
+}
+
+.sum {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 10px;
+}
+
+.sum:nth-child(3) {
+  border-bottom: 2px solid black;
+  padding-bottom: 20px;
+}
+
+.carSum {
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.carSum .left {
+  display: flex;
+}
+
+.carSum img{
+  width: 30px;
+  height: 30px;
+  margin: auto 5px;
 }
 
 /* 配送 */
@@ -122,14 +282,14 @@
   display: flex;
   position: absolute;
   bottom: 0;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .content-right button {
   font-size: 20px;
   font-weight: 700;
   height: 80px;
-  width: 230px;
+  width: 480px;
   margin: 5px;
   border-radius: 50px;
   cursor: pointer;

@@ -62,3 +62,56 @@ swiper.addEventListener('mouseover',function(e){
 swiper.addEventListener('mouseleave',function(e){
   picture.src = currentImgSrc
 })
+
+
+
+
+
+// 加入购物车
+
+// 绑定按钮
+const addToCarBtn = document.querySelector('.shopCar')
+
+addToCarBtn.addEventListener('click',function(){
+  // 商品名称
+  const ProductName = document.querySelector('.content-right .description h1')
+  const productName = ProductName.textContent
+  // 获取价格
+  const priceText = document.querySelector('.content-right-container .description h2').textContent
+  console.log(priceText)
+  
+  const price = parseFloat(priceText.replace('￥',''))
+  console.log(price);
+  
+  // 图片路径
+  const imageSrc = document.querySelector('.picture img').src
+  // 获取商品id
+  const productId = ProductName.getAttribute('data-id')
+
+
+  // 创建商品对象
+  const product = {
+    id: productId,
+    name: productName,
+    price: price,
+    image: imageSrc,
+    quantity: 1
+  }
+
+  // 获取现在购物车的数据
+  let cart = JSON.parse(localStorage.getItem('cart')) || []
+
+  // 判断是否存在购物车中
+  const existing = cart.findIndex(item => item.id === productId)
+
+  if(existing !== -1){
+    // 商品存在 数量  + 1
+    cart[existing].quantity += 1
+  } else {
+    // 商品不存在 将商品追加到购物车中
+    cart.push(product)
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart))
+
+})

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>详细</title>
+  <title>购物车</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/nav.css">
   <link rel="stylesheet" href="../css/car.css">
@@ -29,10 +29,10 @@
             <a href="">景点门票</a>
           </div>
           <div class="nav-menu-item">
-            <a href="" style="color:#2ecabd">特产</a>
+            <a href="">特产</a>
           </div>
           <div class="nav-menu-item">
-            <a href="../shopCar/car.html" target="_blank">购物车</a>
+            <a href="../shopCar/car.html" target="_blank" style="color:#2ecabd">购物车</a>
           </div>
         </nav>
         <!-- 搜索栏 -->
@@ -50,24 +50,50 @@
         </nav>
       </div>
     </div>
+    <!-- 购物车 -->
     <div class="good-container">
       <div class="content-left">
-        <ul class="swiper">
-          <li class="tab-item" data-id="1"><img src="../images/ikea1.webp" alt=""></li>
-          <li class="tab-item" data-id="2"><img src="../images/ikea2.webp" alt=""></li>
-          <li class="tab-item" data-id="3"><img src="../images/IKEA3.webp" alt=""></li>
-          <li class="tab-item" data-id="4"><img src="../images/ikea4.webp" alt=""></li>
-        </ul>
+        <div class="car-list-manage">
+          <div class="selected-all">
+            <div class="check-box">
+                <input type="checkbox" class="checkAll">
+                <span>全选</span>
+            </div>
+          </div>
+          <div class="delete-manage">
+            <button class="delete"><img src="../images/删 除.svg" alt=""></button>
+          </div>
+        </div>
+
+        <div class="car-items">
+          <ul class="items">
+            <!-- js填充 -->
+          </ul>
+        </div>
       </div>
+      <!-- 结算 -->
       <div class="content-right">
         <!-- 描述 -->
          <div class="content-right-container">
            <div class="description">
-             <h1>名字</h1>
-             <h2>Jiagj价格55328975</h2>
-             <h3>描述：的回复i阿萨的农夫i大师傅i收hafkjda的飞回啊收到回复的介绍客户反馈的话覅u哈桑iudhiu到回复光滑阿松iu发挥优势大iu防晒欧服还是丢个复活isufg</h3>
-             <!-- 配送 -->
+              <div class="sum">
+                <div class="left"><img src="../images" alt="">商品小计：</div>
+                <div class="right">￥0.00</div>
+              </div>
+              <div class="sum">
+                <div class="left"><img src="../images" alt="">促销优惠：</div>
+                <div class="right">-￥0.00</div>
+              </div>    
+              <div class="sum">
+                <div class="left"><img src="../images" alt="">优惠总计(包含优惠券)：</div>
+                <div class="right">-￥0.00</div>
+              </div>                        
+              <div class="sum carSum">
+                <div class="left"><img src="../images/购物车.svg" alt="">购物车合计：</div>
+                <div class="right">￥0.00</div>
+              </div>             
             </div>
+            <!-- 配送 -->
             <div class="transport">
                <div class="left"><img src="../images/货车.svg" alt="">配送到家</div>
                <div class="right">支持配送<img src="../images/icon_dot-copy-copy.svg" alt=""></div>
@@ -75,7 +101,6 @@
          </div>
         <!-- 按钮 -->
         <div class="button">
-          <button class="shopCar">加入购物车</button>
           <a href=""><button class="buy">立即购买</button></a>
         </div>
       </div>
@@ -83,7 +108,8 @@
   </div>
 
 
-  <script src="../js/goods.js"></script>
+  <script src="../js/car.js"></script>
+
 
 </body>
 </html>
