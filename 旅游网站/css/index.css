@@ -1,4 +1,9 @@
+
+
 .home-page {
+  display: flex;
+  flex-direction: column;
+  position: relative;
   margin: 0 auto;
   width: 100%;
   max-width: 2650px;
@@ -105,7 +110,7 @@
 
 /* 主要内容 */
 .content {
-  height: 2000px;
+  height: 3200px;
   width: 100%;
   background-color: #fff;
 }
@@ -178,8 +183,8 @@
 /* ------------------------------------------------------- */
 
 
-/* 酒店推荐 */
-.hotel {
+/* 特产推荐 */
+.goods {
   display: flex;
   width: 80%;
   height: 1100px;
@@ -194,38 +199,38 @@
 }
 
 /* 标题 */
-.hotel .title {
+.goods .title {
   width: 100%;
 }
 
-/* 酒店 */
-.hotel .hotel-item {
+/* 特产 */
+.goods .goods-item {
   width: 300px;
   height: 450px;
   margin: 10px 30px;
   border-radius: 10px;
 }
 
-.hotel .hotel-item h3 {
+.goods .goods-item h3 {
   margin: 5px 0;
   padding-left: 10px;
 }
 
-.hotel .hotel-item img {
+.goods .goods-item img {
   cursor: pointer;
   width: 300px;
   height: 75%;
   border-radius: 10px;
 }
 
-.hotel .hotel-item:hover {
+.goods .goods-item:hover {
   transition: transform 0.5s; 
   transform: translateY(-10px) scale(1.02);
   border: 1px solid seagreen;
 }
 
 /* 了解更多 */
-.hotel .hotel-item .more {
+.goods .goods-item .more {
   display: block;
   bottom:0;
   margin: 0 auto;
@@ -238,36 +243,97 @@
   color: #fff;
 }
 
-.hotel .hotel-item .more:hover {
+.goods .goods-item .more:hover {
   background-color: #2ecabd;
 }
 
 /* ------------------------------------------------------- */
 
 
-/* 景点 */
-.spot-container {
-  height: 1000px;
+/* 酒店 */
+.hotel-container {
+  position: relative;
+  height: 800px;
   width: 100%;
   max-width: 2650px;
   background-image: 
     linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0) 30%),
-    linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0) 30%),
+    linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0) 35%),
     url(../images/jamie-street-gZlQZFCA1Vc-unsplash.jpg);
     background-repeat: no-repeat;
   background-size: cover;
 }
 
-.spot-container .swiper {
-  top: 25%;
+.hotel-container .title {
+  position: absolute;
+  top: 5%;
+  left: 49%;
 }
 
-.spot-container .swiper-wrapper img {
+.hotel-container .swiper {
+  top: 15%;
+}
+
+.hotel-container .swiper-wrapper img {
   object-fit: contain;
   border-radius: 10px;
 }
 
-.spot-container .swiper-wrapper img:hover {
+.hotel-container .swiper-wrapper img:hover {
   transition: all 0.5s; 
   transform: translateY(-10px) scale(1.02);
 }
+
+
+/* -------------------------------------------- */
+/* 页脚 */
+footer {
+  background-color: #ffffff;
+  padding: 0 5% 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  border-top: 1px solid gray;
+  padding: 3rem;
+}
+
+.footer-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #3498db;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #2ecabd;
+}
+
+

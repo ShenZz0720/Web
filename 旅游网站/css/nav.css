@@ -1,0 +1,83 @@
+
+.header-container {
+  width: 100%;
+  height: 80px;
+  /* position: fixed; */
+  display: flex;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  padding: 0 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  font-size: 18px;
+  color: black;
+  align-items: center;
+  max-width: 1440px;
+}
+
+/* logo */
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+}
+
+
+/* 导航 */
+.nav-menu {
+  display: flex;
+  width: 888px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu-item {
+  display: flex;
+  align-items: center;
+  margin: 0 50px;
+}
+
+/* search */
+.search-item {
+  display: flex;
+  align-items: center;
+}
+
+.search-item input {
+  height: 40px;
+  border: 1px solid #2ecabd;
+  outline: none;
+  padding: 0 10px;
+  border-radius: 50px 0 0 50px;
+}
+
+.search-item .search-button {
+  height: 40px;
+  width: 55px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 50px 50px 0;
+  background-color: #2ecabd;
+  background-image: url(../images/search.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* 个人中心 */
+.login-item {
+  width: 100px;
+  margin-left: 50px;
+}

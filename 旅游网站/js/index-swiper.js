@@ -21,7 +21,7 @@ var swiper = new Swiper(".banner_swiper", {
 });
 
 
-var swiper = new Swiper(".spot-swiper", {
+var swiper = new Swiper(".hotel-swiper", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
@@ -44,7 +44,7 @@ var swiper = new Swiper(".spot-swiper", {
   },
   mousewheel: {
   invert: false,    
-  eventsTarget: '.spot-swiper' 
+  eventsTarget: '.hotel-swiper' 
 },
 
 

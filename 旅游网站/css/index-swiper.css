@@ -55,25 +55,25 @@
 
     /* 景点swiper */
 
-    .spot-container .swiper {
+    .hotel-container .swiper {
       width: 100%;
       padding-top: 50px;
       padding-bottom: 50px;
     }
 
-    .spot-container .swiper-slide {
+    .hotel-container .swiper-slide {
       background-position: center;
       background-size: cover;
       width: 300px;
       height: 400px;
     }
 
-    .spot-container .swiper-slide img {
+    .hotel-container .swiper-slide img {
       display: block;
       width: 100%;
     }
 
-    .spot-container .swiper-pagination-bullet-active {
+    .hotel-container .swiper-pagination-bullet-active {
       background-color: #2ecabd;
     }
     
